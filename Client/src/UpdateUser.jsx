@@ -18,11 +18,11 @@ function UpdateUser() {
         setAge(result.data.age)
       })
       .catch(err => console.log(err))
-  }, [])
+  }, [id])
 
   const Update = (e) => {
     e.preventDefault()
-    axios.put("http://localhost:3001/createUser/" + id, { name, email, age })
+    axios.put("http://localhost:3001/updateUser/" + id, { name, email, age })  // ✅ fixed URL
       .then(result => {
         console.log(result)
         navigate('/')
